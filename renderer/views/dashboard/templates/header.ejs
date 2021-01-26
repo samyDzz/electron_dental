@@ -1,0 +1,87 @@
+<script type="text/javascript">
+	const storage = require('electron-json-storage');
+	storage.get('userInfos', function(error, data) {
+	  if (error) throw error;
+	  console.log(data);
+	  var nom = data.nom;
+	  var prenom = data.prenom;
+		$('#nom_prenom').text(prenom+" "+nom);
+	});
+
+</script>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-header">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 header-left">
+			<h3>DENTALTECHUP</h3>
+			<p>DentalTechUp, Bejaia City, DZ 06000</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 header-right">
+			<img src="../../assets/images/profile/avatar.png" alt="avatar" />
+			<h5 id="nom_prenom">
+				
+			</h5>
+		</div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-tools">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tools-left">
+			<ul id="tools-menu">
+				<li class="radius-list-left">
+					<p>patients</p>
+					<img src="../../assets/images/icons/down-arrow-white.png" class="arrow-down" alt="arrow down" />
+					<div class="menu-expand">
+						<div class="menu-item" id="add_patient">	
+							<img src="../../assets/images/icons/add-user.svg" alt="add user" />
+							<p>Ajouter un patients</p>
+						</div>
+						<div class="menu-item" id="list_patients"> 	
+							<img src="../../assets/images/icons/details-user.svg" alt="details user" style="width: 21px;" />
+							<p>détails patients</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<p>Traitements</p>
+					<img src="../../assets/images/icons/down-arrow-white.png" class="arrow-down" alt="arrow down" />
+					<div class="menu-expand">
+						<div class="menu-item" id="dental_screen">	
+							<img src="../../assets/images/icons/tooth.svg" alt="tooth" style="width: 35px;position: relative;left: -2px;" />
+							<p>L'écran dentaire</p>
+						</div>
+						<div class="menu-item" id="patient_visit_list">	
+							<img src="../../assets/images/icons/user-list.svg" alt="user-list" />
+							<p>Visites des patients</p>
+						</div>
+						<div class="menu-item" id="report_treatement">	
+							<img src="../../assets/images/icons/profit-report.svg" alt="profit-report" />
+							<p>Rapport</p>
+						</div>
+					</div>
+				</li>
+				<li class="radius-list-right" id="comptabilites">
+					<p>Comptabilité</p>
+				</li>
+			</ul>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tools-right">
+			<ul id="tools-menu">
+				<li class="radius-list-left" id="settings">
+					<p>Paramètres</p>
+				</li>
+				<li class="radius-list-right" id="help">
+					<p>Aide</p>
+				</li>
+			</ul>
+			<ul id="menu-tool-icons">
+				<li>
+					<img src="../../assets/images/icons/question-white.svg" alt="" />
+				</li>
+				<li id="logout">
+					<img src="../../assets/images/icons/exit-white.svg" alt="" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

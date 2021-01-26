@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href=".././../../node_modules/electron-tabs/electron-tabs.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Dental's Screen</title>
+	    
+	    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/bootstrap.min.css" />
+	    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/global.css" />
+		<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../../node_modules/electron-tabs/electron-tabs.css" />
+		<link rel="stylesheet" href="../../assets/stylesheets/calendar/demo.css"/>
+	    <link rel="stylesheet" href="../../assets/stylesheets/calendar/theme3.css"/>
+		<script type="text/javascript" src="../../assets/javascripts/jquery-3.5.1.min.js"></script>
+		<style type="text/css">
+			.wrapper-list {
+			    padding: 20px 25px;
+			}
+			.list-header {
+				margin-bottom: 25px;
+				padding: 0;
+			}
+			.list-header img {
+				width: 45px;
+				position: relative;
+				top: -5px;
+				margin-right: 10px;
+			}
+			.list-header h3 {
+				font-size: 25px;
+				color: var(--color-black);
+				display: inline-block;
+			}
+	    	._control {
+	    	    margin-top: 0;
+	    	}
+	    	._control label {
+	    		position: relative;
+	    		text-align: left;
+	    		color: #6b7280;
+	    		font-size: 14px;
+	    		margin-bottom: 3px;
+	    	}
+	    	._control input {
+	    		width: 100%;
+	    		height: 40px;
+	    		border-radius: 4px;
+	    		border: 1px solid var(--color-gray);
+	    		padding-left: 10px;
+	    		font-size: 13px;
+	    	}
+	    	.err {
+				position: relative;
+			    color: var(--color-red);
+			    font-size: 13px;
+			    left: 10px;
+			    top: 1px;
+			    visibility: hidden;
+			    display: none;
+			    margin: 0;
+	    	}
+	    	._control select {
+	    	    width: 100%;
+	    	    height: 40px;
+	    	    border-radius: 4px;
+	    	    border: 1px solid var(--color-gray);
+	    	    padding-left: 10px;
+	    	    font-size: 13px;
+	    	}
+	    	._control textarea {
+	    	    width: 100%;
+	    	    height: 70px;
+	    	    border-radius: 4px;
+	    	    border: 1px solid var(--color-gray);
+	    	    padding-left: 10px;
+	    	    font-size: 13px;
+	    	    padding-top: 10px;
+	    	}
+	    	._control input:focus, ._control select:focus, ._control textarea:focus {
+	    		outline: none;
+	    	}
+	    	.quarter_form {
+				width: 25%;
+			    display: inline-block;
+	    	}
+	    	.small_form {
+				width: 15%;
+			    display: inline-block;
+	    	}
+	    	._control button {
+	    		float: right;
+			    background: #fff;
+			    border-radius: 6px;
+			    margin-left: 10px;
+			    font-size: 14px;
+			    cursor: pointer;
+			    border: 1px solid var(--color-gray);
+	    	}
+	    	._control button:hover {
+	    		border: 1px solid var(--color-blue-light) !important;
+	    		color: var(--color-blue-light) !important;
+	    	}
+	    	.control_options {
+	    		position: fixed;
+			    bottom: 0;
+			    background: var(--color-gray-light);
+			    height: 50px;
+			    padding-top: 10px;
+			    width: 100%;
+			    left: 0;
+			    right: 0;
+			    padding-right: 15px;
+			}
+			._control button>img {
+			    width: 15px;
+			    display: inline-block;
+			}
+			._control button>span {
+				display: inline-block;
+			}
+			.list-form {
+
+			}
+			button:focus {
+				outline: none;
+			}
+			.patient-infos {
+			    background-color: #fff;
+			    border-radius: 6px;
+			    border: 1px solid var(--color-gris);
+			    padding: 12px;
+			    height: 165px;
+			}
+			.top-actions {
+				background-color: #fff;
+				border-radius: 6px;
+				border: 1px solid var(--color-gris);
+				padding: 20px 15px;
+				height: 185px;
+			}
+			#create_new, #reset {
+				width: 100%;
+			    height: 40px;
+			    border-radius: 4px;
+			    border: 1px solid var(--color-gris);
+			    color: #6b7280;
+			    font-size: 14px;
+			    margin-bottom: 10px;
+			    cursor: pointer;
+			    background-color: #fff;
+			}
+			#create_new:hover, #reset:hover {
+				color: var(--color-blue-light) !important;
+				border: 1px solid var(--color-blue-light) !important;
+			}
+			.right-tools {
+			    padding: 0 0 0 15px;
+			}
+			.patient-treatements {
+
+			}
+			.teeth-selection {
+				min-height: 185px;
+			    margin-top: 20px;
+			    padding: 0;
+			}
+			.teeth-selection ul {
+				list-style: none;
+			    margin: 0;
+			    padding: 0;
+			}
+			.teeth-selection li {
+				background: #fff;
+			    border: 1px solid var(--color-gris);
+			    border-radius: 3px 3px 0px 0px;
+			    padding: 7px 9px;
+			    display: table-cell;
+			    font-size: 14px;
+			    color: #6b7280;
+			    position: relative;
+			    top: 1px;
+			    cursor: pointer;
+			}
+			.teeth-selection li.active {
+				background: #fff !important;
+				border-bottom: 0 !important;
+			}
+			.teeth-selection li>img {
+				width: 18px;
+				margin-right: 5px;
+			}
+			.box-tooth {
+				background-color: #fff;
+			    border-radius: 0px 6px 6px 6px;
+			    border: 1px solid var(--color-gris);
+			    padding: 20px 15px;
+			    min-height: 185px;
+			}
+			.upper-teeth {
+				border: 1px solid var(--color-gris);
+				padding: 5px;
+				width: fit-content;
+				display: inline-block;
+				cursor: pointer;
+			}
+			.upper-teeth img {
+				width: 100%;
+			}
+			.lower-teeth {
+				border: 1px solid var(--color-gris);
+				padding: 5px;
+				width: fit-content;
+				display: inline-block;
+				margin-top: 3px;
+				cursor: pointer;
+			}
+			.lower-teeth img {
+				width: 100%;
+			}
+			.upper-teeth:hover {
+				border: 1px solid var(--color-red);
+			}
+			.lower-teeth:hover {
+				border: 1px solid var(--color-blue-light);
+			}
+			#notation-form label {
+				display: inline-block !important;
+			}
+			.notation-txt {
+				display: inline-block !important;
+				width: 65% !important;
+			}
+			.notation-val {
+				display: inline-block !important;
+				width: 10% !important;
+			}
+			#notation-form button {
+				display: inline-block !important;
+				height: 40px;
+			}
+			.teeth-choice {
+				background-color: #fff;
+			    border-radius: 6px;
+			    border: 1px solid var(--color-gris);
+			    padding: 8px 15px;
+			    margin-top: 20px;
+			}
+			.tooth-diagnostics {
+				padding: 0;
+				margin-top: 20px;
+			}
+			.tooth-diagnostics ul {
+				list-style: none;
+			    margin: 0;
+			    padding: 0;
+			}
+			.tooth-diagnostics li {
+				background: #fff;
+			    border: 1px solid var(--color-gris);
+			    border-radius: 3px 3px 0px 0px;
+			    padding: 7px 9px;
+			    display: table-cell;
+			    font-size: 14px;
+			    color: #6b7280;
+			    position: relative;
+			    top: 1px;
+			    cursor: pointer;
+			}
+			.tooth-diagnostics li.active {
+				background: #fff !important;
+				border-bottom: 0 !important;
+			}
+			.box-diagnosis {
+				background-color: #fff;
+				border-radius: 0px 6px 6px 6px;
+				border: 1px solid var(--color-gris);
+				padding: 8px 15px;
+				min-height: 185px;
+			}
+			#symptoms-form label {
+				width: 30% !important;
+				vertical-align: top !important;
+				font-size: 13.5px;
+			}
+			#symptoms-form textarea {
+				height: 50px !important;
+				width: 66% !important;
+			    display: inline-block !important;
+			}
+
+			/* Base for label styling */
+			[type="checkbox"]:not(:checked),
+			[type="checkbox"]:checked {
+			  position: absolute;
+			  left: -9999px;
+			}
+			[type="checkbox"]:not(:checked) + label,
+			[type="checkbox"]:checked + label {
+			  position: relative;
+			  padding-left: 2.25em;
+			  cursor: pointer;
+			  font-size: 13px;
+			}
+			[type="checkbox"]:not(:checked) + label:before,
+			[type="checkbox"]:checked + label:before {
+			  content: '';
+			  position: absolute;
+			  left: 0; top: -2px;
+			  width: 1.65em; height: 1.65em;
+			  border: 2px solid #ccc;
+			  background: #fff;
+			  border-radius: 4px;
+			  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+			}
+			[type="checkbox"]:not(:checked) + label:after,
+			[type="checkbox"]:checked + label:after {
+			  content: '\2713\0020';
+			  position: absolute;
+			  top: .15em;
+			  left: .25em;
+			  font-size: 1.3em;
+			  line-height: 0.8;
+			  color: #09ad7e;
+			  transition: all .2s;
+			}
+			[type="checkbox"]:not(:checked) + label:after {
+			  opacity: 0;
+			  transform: scale(0);
+			}
+			[type="checkbox"]:checked + label:after {
+			  opacity: 1;
+			  transform: scale(1);
+			}
+			[type="checkbox"]:checked:focus + label:before,
+			[type="checkbox"]:not(:checked):focus + label:before {
+			  border: 1.5px solid var(--color-blue-light);
+			}
+			label:hover:before {
+			  border: 1.5px solid var(--color-blue-light) !important;
+			}
+			.txtcenter {
+			  margin-top: 4em;
+			  font-size: .9em;
+			  text-align: center;
+			  color: #aaa;
+			}
+			.copy {
+			 margin-top: 2em; 
+			}
+			.copy a {
+			 text-decoration: none;
+			 color: #4778d9;
+			}
+			form#dental-form p {
+			    position: relative;
+			    margin: 0;
+			    display: inline-block;
+			    margin-bottom: 5px;
+			}
+			.bottom-actions {
+				background-color: #fff;
+				border-radius: 6px;
+				border: 1px solid var(--color-gris);
+				padding: 20px 15px;
+				height: 235px;
+				margin-top: 20px;
+			}
+			.bottom-actions button {
+				width: 100%;
+			    height: 40px;
+			    border-radius: 4px;
+			    border: 1px solid var(--color-gris);
+			    color: #6b7280;
+			    font-size: 13px;
+			    margin-bottom: 10px;
+			    cursor: pointer;
+			    background-color: #fff;
+			}
+			.bottom-actions button:hover {
+				color: var(--color-blue-light) !important;
+				border: 1px solid var(--color-blue-light) !important;
+			}
+			.left-diagnosis {
+
+			}
+
+			.right-diagnosis {
+				background-color: #fff;
+				border-radius: 6px;
+				border: 1px solid var(--color-gray);
+				padding: 20px 15px;
+			}	
+
+			#diagnosis-form {
+
+			}
+
+			#diagnosis-form input, #diagnosis-form select, #diagnosis-form textarea {
+			    width: 78.8% !important;
+			}
+
+			#diagnosis-form label {
+				width: 20%;
+			    vertical-align: top !important;
+			    font-size: 13.5px;
+			}
+			.top-actions button>img, .bottom-actions button>img {
+				width: 20px;
+			    position: relative;
+			    top: -1px;
+			}
+			.left-procedures {
+				font-size: 14px;
+				color: var(--color-blue-light);
+				padding: 0;
+				flex: 0 0 calc(100% - 10px);
+				position: relative;
+				height: 30px;
+				line-height: 30px;
+			}
+			.ss-left-procedures {
+				background-color: #fff;
+				border-radius: 6px;
+				border: 1px solid var(--color-gris);
+				padding: 0;
+				height: 139px;
+				flex: 0 0 calc(100% - 10px);
+				margin-right: 10px;
+				overflow: auto;
+			}
+			.right-procedures {
+				background-color: #fff;
+				border-radius: 6px;
+				border: 1px solid var(--color-gris);
+				padding: 20px 15px;
+				height: 169px;
+			}
+			#add_new_disease {
+				width: 25px;
+				position: absolute;
+				right: 38px;
+				top: 8px;
+				cursor: pointer;
+			}
+			.center {
+				text-align: center;
+			}
+			#dental_procedures th>input {
+			    height: 32px;
+			    border: 1px solid var(--color-gray-light);
+			    border-radius: 4px;
+			}
+			#dental_procedures th>span {
+			    font-size: 12px;
+			    color: #2a2a2a;
+			    margin-right: 10px;
+			}
+			#dental_procedures th{
+				font-size: 14px;
+				padding: 7px;
+			}
+			#dental_procedures thead>tr {
+				background: #fff;
+			}
+			#dental_procedures td {
+			    padding: 5px;
+			    color: #2a2a2a;
+			}
+			#dental_procedures img {
+				width: 20px;
+				cursor: pointer;
+			}
+			#form-dental-notation {
+
+			}
+			#form-dental-notation label {
+				width: 100%;
+			}
+			#form-dental-notation input[type="number"] {
+				width: 40%;
+				margin-bottom: 10px;
+			}
+			#form-dental-notation input {
+				height: 30px;
+			}
+			#form-dental-notation button {
+			    float: left;
+			    width: 47%;
+			    margin: 0;
+			    margin-right: 7px;
+			    margin-top: 10px;
+			    padding: 10px 0;
+			    font-size: 12px;
+			}
+			.left-notation {
+			    border: 1px solid var(--color-gris);
+			    border-radius: 8px;
+			    padding: 15px;
+			}
+			.right-notation {
+			    border: 1px solid var(--color-gris);
+			    border-radius: 8px;
+			    padding: 15px;
+			    flex: 0 0 calc(66.666667% - 10px );
+			    margin-left: 10px;
+			}
+			#table-notations img {
+				width: 25px;
+			}
+			#table-notations th, #table-notations td {
+				padding: .4rem !important;
+				font-size: 15px;
+			}
+			.t-notation {
+			    text-align: right;
+			    margin-bottom: 5px;
+			    cursor: pointer;
+			}
+			.type-notation {
+				display: inline-block;
+			}
+			.type-notation input {
+				position: relative;
+				top: 1px;
+			}
+			.type-notation span {
+				font-size: 13.5px;
+			}
+
+		</style>
+	</head>
+	<body>	
+		<div class="container-fluid">
+			<div class="row wrapper-list">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 list-header">
+					<img src="../../assets/images/icons/tooth.svg" alt="" />
+					<h3>Écran dentaire</h3>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 list-form">
+					<div class="row">
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 left-tools">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 patient-infos">
+									<form id="add-infos-form">
+										<div class="_control quarter_form">
+											<label>VISITE ID</label>
+											<input type="text" name="visit_id" />
+											<p class="err err-name">Veuillez insérer un identifiant de visite valide</p>
+										</div>
+										<div class="_control quarter_form">
+											<label>DATE DE VISITE</label>
+											<input type="text" name="visit_date" />
+											<p class="err err-name">Veuillez insérer une date de visite valide</p>
+										</div>
+										<div class="_control quarter_form">
+											<label>HEURE</label>
+											<input type="text" name="visit_time" />
+											<p class="err err-name">Veuillez insérer une heure valide</p>
+										</div>
+										<br>
+										<div class="_control quarter_form">
+											<label>ID PATIENT</label>
+											<input type="text" name="patient_id" />
+											<p class="err err-name">Veuillez insérer un identifiant de patient valide</p>
+										</div>
+										<div class="_control quarter_form">
+											<label>NOM DU PATIENT</label>
+											<input type="text" name="patient_name" />
+											<p class="err err-name">Veuillez insérer un nom de patient valide</p>
+										</div>
+										<div class="_control small_form">
+											<label>ÂGE</label>
+											<input type="number" name="age" />
+											<p class="err err-age">Veuillez insérer un âge valide</p>
+										</div>
+										<div class="_control small_form">
+											<label>LE SEXE</label>
+											<select class="gender">
+												<option value="0">Masculin</option>
+												<option value="1">Femme</option>
+											</select>
+											<p class="err err-gender">Veuillez insérer un sexe valide</p>
+										</div>
+									</form>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 patient-treatements">
+									<div class="row">
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 teeth-selection">
+											<ul>
+												<li id="permanent-teeth" class="active">
+													<img src="../../assets/images/icons/teeth.svg" alt="" />
+													DENTS PERMANENTES
+												</li>
+												<li id="primary-teeth">
+													<img src="../../assets/images/icons/teeth.svg" alt="" />
+													DENTS PRIMAIRES
+												</li>
+												<li id="notation-grid">
+													<img src="../../assets/images/icons/tooth.svg" alt="" />
+													GRILLE DE NOTATION
+												</li>
+											</ul>
+											<div class="box-tooth permanent-teeth">
+												<div class="row" style="margin: 0;">
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 center">
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/1.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/2.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/3.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/4.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/5.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/6.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/7.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/8.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/9.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/10.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/11.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/12.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/13.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/14.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/15.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/tooths/16.png" alt="" />
+														</div>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 center">
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/17.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/18.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/19.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/20.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/21.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/22.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/23.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/24.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/25.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/26.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/27.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/28.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/29.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/30.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/31.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/tooths/32.png" alt="" />
+														</div>	
+													</div>
+												</div>
+											</div>
+											<div class="box-tooth primary-teeth" style="display: none;">
+												<div class="row" style="margin: 0;">
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 center">
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/1.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/2.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/3.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/4.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/5.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/6.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/7.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/8.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/9.png" alt="" />
+														</div>
+														<div class="upper-teeth">
+															<img src="../../assets/images/primary-teeth/10.png" alt="" />
+														</div>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 center">
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/11.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/12.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/13.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/14.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/15.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/16.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/17.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/18.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/19.png" alt="" />
+														</div>
+														<div class="lower-teeth">
+															<img src="../../assets/images/primary-teeth/20.png" alt="" />
+														</div>	
+													</div>
+												</div>
+											</div>
+											<div class="box-tooth notation-grid" style="display: none;">
+												<div class="row" style="margin: 0;">
+													<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 left-notation">
+														<form id="form-dental-notation">
+															<div class="_control">
+																<label>NOTATION DENTAIRE</label>
+																<input type="number" name="dental_notation" />
+																<input type="text" name="dental_notation_name" />
+																<button class="reset_notation">
+																	<img src="../../assets/images/icons/diskette.svg" alt="" />
+																	METTRE À JOUR
+																</button>
+																<button class="reset_notation">
+																	<img src="../../assets/images/icons/reset.svg" alt="" />
+																	RÉINITIALISER
+																</button>
+															</div>
+														</form>
+													</div>
+													<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 right-notation">
+														<div class="t-notation">
+															<div class="type-notation">
+																<input type="radio" name="permanent" id="permanent" checked="">
+																<label for="permanent">PERMANENT</label>
+															</div>
+															<div class="type-notation">
+																<input type="radio" name="primary" id="primary">
+																<label for="primary">PRIMAIRE</label>
+															</div>
+														</div>
+														<table class="table table-striped" id="table-notations">
+															<tbody>
+																<tr>
+																	<td scope="col">
+																		<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+																	</td>
+																	<td scope="col">13</td>
+																	<td scope="col">Permanent Incisors</td>
+																</tr>
+																<tr>
+																	<td scope="col">
+																		<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+																	</td>
+																	<td scope="col">12</td>
+																	<td scope="col">Permanent Incisors</td>
+																</tr>
+																<tr>
+																	<td scope="col">
+																		<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+																	</td>
+																	<td scope="col">11</td>
+																	<td scope="col">Permanent Molars</td>
+																</tr>
+																<tr>
+																	<td scope="col">
+																		<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+																	</td>
+																	<td scope="col">9</td>
+																	<td scope="col">Permanent Premolars</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 teeth-choice">
+											<form id="notation-form">
+												<div class="_control">
+													<label>NOTATION</label>
+													<input type="text" name="notation" class="notation-val" />
+													<input type="text" name="notation" class="notation-txt" />
+													<button class="reset_notation">
+														<img src="../../assets/images/icons/reset.svg" alt="" />
+														RÉINITIALISER
+													</button>
+												</div>
+											</form>
+										</div>	
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tooth-diagnostics">
+											<ul>
+												<li id="dental-symptoms" class="active">
+													Symptômes dentaires
+												</li>
+												<li id="dental-procedures">
+													Procédures
+												</li>
+												<li id="dental-diagnosis">
+													Diagnostic
+												</li>
+											</ul>
+											<div class="box-diagnosis">
+												<div class="row" style="margin: 0;">
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 dental-symptoms">
+														<div class="row">
+															<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																<form id="symptoms-form">
+																	<div class="_control">
+																		<label>Conforme et symptômes :</label>
+																		<textarea name="compliant"></textarea>
+																	</div>
+																	<div class="_control">
+																		<label>Antécédents dentaires :</label>
+																		<textarea name="dental_history"></textarea>
+																	</div>
+																	<div class="_control">
+																		<label>Antécédents médicaux :</label>
+																		<textarea name="medical_history"></textarea>
+																	</div>
+																</form>
+															</div>
+															<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 pad0">
+																<form id="dental-form">
+																	<p>
+																	  <input type="checkbox" id="test1" />
+																	  <label for="test1">Hygiénistes dentaires</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test2" />
+																	  <label for="test2">Parodontite</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test3" />
+																	  <label for="test3">Maîtriser les mauvaises habitudes</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test4" />
+																	  <label for="test4">Plaque, tartre et cavités</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test5" />
+																	  <label for="test5">Vérification de routine</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test6" />
+																	  <label for="test6">Accident</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test7" />
+																	  <label for="test7">Détection du cancer buccal</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test8" />
+																	  <label for="test8">Développement</label>
+																	</p>
+																	<p>
+																	  <input type="checkbox" id="test8" />
+																	  <label for="test8">Esthétique en orthodontie</label>
+																	</p>
+
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 dental-procedures" style="display: none;">
+														<div class="row" style="margin: 0;">
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad0 left-procedures">
+																<div class="row" style="margin: 0;">
+																	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 ss-left-procedures">
+																		<table class="table table-striped" id="dental_procedures">
+																			<thead>
+																				<tr>
+																					<th scope="col" style="min-width: 80%;">
+																						<span>PROCÉDURES DENTAIRES</span>
+																						<input type="text" name="procedures" />
+																					</th>
+																					<th scope="col"></th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td scope="col">Des dents d'anger</td>
+																					<td scope="col">
+																						<img src="../../assets/images/icons/right-arrow.svg" class="edit-patient" alt="edit patient" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td scope="col">Mars home</td>
+																					<td scope="col">
+																						<img src="../../assets/images/icons/right-arrow.svg" class="edit-patient" alt="edit patient" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td scope="col">Come First</td>
+																					<td scope="col">
+																						<img src="../../assets/images/icons/right-arrow.svg" class="edit-patient" alt="edit patient" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td scope="col">Broke hours</td>
+																					<td scope="col">
+																						<img src="../../assets/images/icons/right-arrow.svg" class="edit-patient" alt="edit patient" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td scope="col">Bring Time</td>
+																					<td scope="col">
+																						<img src="../../assets/images/icons/right-arrow.svg" class="edit-patient" alt="edit patient" />
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0 left-procedures">
+																		<a href="#" id="dental_procedure_btn">Liste des procédures dentaires</a>
+																	</div>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-procedures">
+																
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dental-diagnosis" style="display: none;">
+														<div class="row">
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 left-diagnosis">
+																<form id="diagnosis-form">
+																	<div class="_control" style="margin-bottom: 10px;">
+																		<label>Maladie :</label>
+																		<select class="disease">
+																			<option value="0"></option>
+																		</select>
+																		<img src="../../assets/images/icons/new.svg" alt="" id="add_new_disease">
+																	</div>
+																	<div class="_control">
+																		<label>Diagnostic :</label>
+																		<textarea name="diagnosis"></textarea>
+																	</div>
+																	<div class="_control">
+																		<button style="width: 120px;">
+																			<img src="../../assets/images/icons/new.svg" alt="" />
+																			AJOUTER
+																		</button>
+																	</div>
+																</form>
+
+															</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-diagnosis">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 right-tools">
+							<div class="row" style="margin: 0;">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top-actions">
+									<button id="create_new">
+										<img src="../../assets/images/icons/new.svg" alt="" />
+										CRÉER
+									</button>
+									<button id="reset">
+										<img src="../../assets/images/icons/reset.svg" alt="" />
+										RÉINITIALISER
+									</button>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottom-actions">
+									<button id="save_changes">
+										<img src="../../assets/images/icons/diskette.svg" alt="" />
+										SAUVEGARDER
+									</button>
+									<button id="billing">
+										<img src="../../assets/images/icons/invoices.svg" alt="" />
+										FACTURATION
+									</button>
+									<button id="patient_form">
+										<img src="../../assets/images/icons/printer.svg" alt="" />
+										FORMULAIRE PATIENT
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../../assets/javascripts/header.js"></script>
+		<script type="text/javascript" src="../../assets/javascripts/tabs.js"></script>
+		<script type="text/javascript">
+			$('body').on('click','.teeth-selection li',function(){
+				$('.teeth-selection li').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			$('body').on('click','.tooth-diagnostics li',function(){
+				$('.tooth-diagnostics li').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			$('body').on('click','#dental-symptoms',function(){
+				$('.dental-symptoms').show();
+				$('.dental-procedures').hide();
+				$('.dental-diagnosis').hide();
+			});
+			$('body').on('click','#dental-procedures',function(){
+				$('.dental-symptoms').hide();
+				$('.dental-procedures').show();
+				$('.dental-diagnosis').hide();
+			});
+			$('body').on('click','#dental-diagnosis',function(){
+				$('.dental-symptoms').hide();
+				$('.dental-procedures').hide();
+				$('.dental-diagnosis').show();
+			});
+
+			$('body').on('click','#permanent-teeth',function(){
+				$('.permanent-teeth').show();
+				$('.primary-teeth').hide();
+				$('.notation-grid').hide();
+			});
+			$('body').on('click','#primary-teeth',function(){
+				$('.permanent-teeth').hide();
+				$('.primary-teeth').show();
+				$('.notation-grid').hide();
+			});
+			$('body').on('click','#notation-grid',function(){
+				$('.permanent-teeth').hide();
+				$('.primary-teeth').hide();
+				$('.notation-grid').show();
+			});
+			
+
+		</script>
+		<script type="text/javascript">
+			const customTitlebar = require('custom-electron-titlebar');
+			const path = require('path'); 
+			const url = require('url');
+
+			new customTitlebar.Titlebar({
+			    backgroundColor: customTitlebar.Color.fromHex('#444'),
+			    icon : url.format(path.join(__dirname, '/../../assets/images/logos/logox2.png'))
+			});
+		</script>
+	</body>
+</html>

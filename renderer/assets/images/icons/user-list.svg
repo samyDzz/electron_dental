@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
+<polygon xmlns="http://www.w3.org/2000/svg" style="" points="444.496,0 22.501,0 22.501,512 444.496,510.745 " fill="#4198f7" data-original="#00ccb2" class=""/>
+<polygon xmlns="http://www.w3.org/2000/svg" style="" points="233.116,0 233.116,511.373 444.496,510.745 444.496,0 " fill="#4198f7" data-original="#00ab94" class=""/>
+<rect xmlns="http://www.w3.org/2000/svg" x="82.5" y="60" style="" width="301.99" height="392" fill="#fff2b4" data-original="#fff2b4" class=""/>
+<rect xmlns="http://www.w3.org/2000/svg" x="233.12" y="60" style="" width="151.38" height="392" fill="#ffdf8e" data-original="#ffdf8e" class=""/>
+<polygon xmlns="http://www.w3.org/2000/svg" style="" points="311.633,148.97 155.364,148.97 155.364,0 185.364,0 185.364,118.97 281.633,118.97   281.633,0 311.633,0 " fill="#4198f7" data-original="#00ab94" class=""/>
+<g xmlns="http://www.w3.org/2000/svg">
+	<rect x="143.5" y="362" style="" width="104.02" height="30" fill="#ffb64c" data-original="#ffb64c" class=""/>
+	<rect x="143.5" y="301.99" style="" width="104.35" height="30" fill="#ffb64c" data-original="#ffb64c" class=""/>
+</g>
+<polygon xmlns="http://www.w3.org/2000/svg" style="" points="281.633,0 281.633,118.97 233.116,118.97 233.116,148.97 311.633,148.97 311.633,0 " fill="#4198f7" data-original="#087263" class=""/>
+<polygon xmlns="http://www.w3.org/2000/svg" style="" points="271.561,209.679 247.439,209.679 247.439,185.558 217.439,185.558 217.439,209.679   193.318,209.679 193.318,239.679 217.439,239.679 217.439,263.8 247.439,263.8 247.439,239.679 271.561,239.679 " fill="#e63950" data-original="#e63950"/>
+<polygon xmlns="http://www.w3.org/2000/svg" style="" points="247.439,209.679 247.439,185.558 233.116,185.558 233.116,263.8 247.439,263.8   247.439,239.679 271.561,239.679 271.561,209.679 " fill="#ae2538" data-original="#ae2538" class=""/>
+<path xmlns="http://www.w3.org/2000/svg" style="" d="M449.667,279.844c-25.686-25.686-59.836-39.832-96.161-39.832s-70.476,14.146-96.161,39.832  s-39.832,59.836-39.832,96.161s14.146,70.475,39.832,96.161s59.836,39.832,96.161,39.832s70.475-14.146,96.161-39.832  s39.832-59.836,39.832-96.161S475.353,305.529,449.667,279.844z" fill="#0d53fc" data-original="#005357" class=""/>
+<path xmlns="http://www.w3.org/2000/svg" style="" d="M449.667,279.844c-25.686-25.686-59.836-39.832-96.161-39.832l0,0v271.985l0,0  c36.325,0,70.475-14.146,96.161-39.832s39.832-59.836,39.832-96.161C489.499,339.68,475.353,305.529,449.667,279.844z" fill="#0d53fc" data-original="#004244" class=""/>
+<path xmlns="http://www.w3.org/2000/svg" style="" d="M400.356,364.013c-2.079,2.883-3.005,4.115-2.865,5.548c4.605,46.899-33.073,74.751-33.073,74.751  v-13.839c0-8.37-1.525-18.206-4.08-26.311c-2.795-8.867-5.695-12.192-6.822-12.923c-1.147,0.742-4.102,4.094-6.99,12.984  c-2.653,8.165-4.236,17.978-4.236,26.25v13.372c0,0-33.623-20.242-32.777-73.623c0.027-1.7-1.097-3.487-3.106-6.499  c-3.28-4.916-7.771-11.648-7.771-22.937c0-8.85,3.519-17.176,9.909-23.444c6.471-6.347,15.002-9.75,24.007-9.574  c7.719,0.149,15.109,2.968,20.956,7.967c5.847-4.999,13.237-7.818,20.956-7.967c9.002-0.165,17.536,3.226,24.007,9.574  c6.39,6.269,9.909,14.594,9.909,23.443C408.378,352.889,403.741,359.318,400.356,364.013z" fill="#f7f4f4" data-original="#f7f4f4" class=""/>
+<path xmlns="http://www.w3.org/2000/svg" style="" d="M408.378,340.786c0-8.85-3.519-17.175-9.909-23.443c-6.471-6.347-15.005-9.739-24.007-9.574  c-7.718,0.149-15.108,2.968-20.956,7.967l0,0v75.51c0.003-0.002,0.007-0.005,0.01-0.007c1.127,0.73,4.027,4.056,6.822,12.923  c2.555,8.105,4.08,17.941,4.08,26.311v13.839c0,0,37.678-27.852,33.073-74.751c-0.141-1.433,0.786-2.665,2.865-5.548  C403.741,359.318,408.378,352.889,408.378,340.786z" fill="#e9e6e9" data-original="#e9e6e9" class=""/>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+</g></svg>

@@ -1,0 +1,129 @@
+.window-title {
+	color: #fff;
+	font-size: 15px !important;
+}
+.titlebar {
+	height: 45px !important;
+}
+.container-after-titlebar {
+	top: 45px !important;
+	padding-top: 20px !important;
+}
+._control {
+    margin-top: 0;
+}
+._control label {
+	position: relative;
+	text-align: left;
+	color: #6b7280;
+	font-size: 14px;
+}
+._control input {
+	width: 100%;
+	height: 40px;
+	border-radius: 4px;
+	border: 1px solid #e5e7eb;
+	padding-left: 10px;
+	font-size: 13px;
+}
+.err {
+	position: relative;
+    color: var(--color-red);
+    font-size: 13px;
+    left: 10px;
+    top: 1px;
+    display: none;
+    margin: 0;
+}
+._control select {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    padding-left: 10px;
+    font-size: 13px;
+}
+._control textarea {
+    width: 100%;
+    height: 70px;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    padding-left: 10px;
+    font-size: 13px;
+    padding-top: 10px;
+}
+._control input:focus, ._control select:focus, ._control textarea:focus {
+	outline: none;
+}
+.half_form {
+	width: 49%;
+    display: inline-block;
+}
+
+._control button {
+	float: left;
+	background: #fff;
+	border-radius: 6px;
+	margin-left: 10px;
+	font-size: 14px;
+	width: 80px;
+	height: 32px;
+	cursor: pointer;
+	border: 1px solid var(--color-gray);
+}
+._control button:hover {
+	border: 1px solid var(--color-blue-light) !important;
+	color: var(--color-blue-light) !important;
+}
+.control_options {
+    bottom: 0;
+    height: 50px;
+    padding-top: 10px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding-right: 15px;
+}
+._control button>img {
+    width: 15px;
+    display: inline-block;
+}
+._control button>span {
+	display: inline-block;
+}
+form#procedures-form {
+    background-color: rgba(229, 229, 229, 0.2);
+    border-radius: 6px;
+    border: 1px solid var(--color-gris);
+    padding: 5px 12px;
+}
+.table thead th {
+    padding: 1em 0.45em !important;
+    font-size: 14px !important;
+    vertical-align: middle !important;
+}
+.table td {
+    padding: 1em 0.45em !important;
+    font-size: 13.5px;
+}
+table img {
+    width: 20px;
+    margin-right: 7px;
+}
+.table-box {
+	background-color: rgba(229, 229, 229, 0.2);
+    border-radius: 6px;
+    border: 1px solid var(--color-gris);
+    padding: 5px 12px;
+    max-height: 290px;
+    overflow: auto;
+}
+.no-procedures {
+	min-height: 150px;
+	display: flex;
+}
+.no-procedures p {
+	margin: auto;
+    font-size: 16px;
+    color: var(--color-gray);
+}

@@ -1,0 +1,49 @@
+{
+  "name": "AppTest",
+  "version": "1.0.0",
+  "description": "Logiciel de test dentiste",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --exec electron .",
+    "build": "electron-builder -w"
+  },
+  "author": "Samir IDIR",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "custom-electron-titlebar": "^3.2.5",
+    "ejs-electron": "^2.1.1",
+    "electron": "^9.0.0",
+    "electron-builder": "^22.9.1",
+    "electron-winstaller": "^4.0.1",
+    "electron-wix-msi": "^3.0.4",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.0",
+    "validator": "^13.1.17"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "custom-electron-titlebar": "^3.2.5",
+    "dragula": "^3.7.3",
+    "ejs-electron": "^2.1.1",
+    "electron-json-storage": "^4.3.0",
+    "electron-settings": "^4.0.2",
+    "electron-store": "^6.0.1",
+    "electron-tabs": "^0.15.0",
+    "electron-window-state": "^5.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.0",
+    "validator": "^13.1.17"
+  },
+  "build": {
+    "appId": "com.stackacademy.tv",
+    "copyright": "Copyright Stackacademy.tv",
+    "win": {
+      "target": "msi"
+    },
+    "linux": {
+      "category": "Utility"
+    }
+  }
+}

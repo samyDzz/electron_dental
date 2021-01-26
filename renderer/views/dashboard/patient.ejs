@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href=".././../../node_modules/electron-tabs/electron-tabs.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Listes des Patients</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/global.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/header.css" />
+	<link rel="stylesheet" type="text/css" href="../../../node_modules/electron-tabs/electron-tabs.css" />
+	<link rel="stylesheet" href="../../assets/stylesheets/calendar/demo.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/calendar/theme3.css"/>
+	<script type="text/javascript" src="../../assets/javascripts/jquery-3.5.1.min.js"></script>
+	<style type="text/css">
+		.wrapper-list {
+		    padding: 50px 25px;
+		}
+		.list-header {
+			margin-bottom: 25px;
+			padding: 0;
+		}
+		.list-header img {
+			width: 30px;
+			position: relative;
+			top: -5px;
+			margin-right: 10px;
+		}
+		.list-header h3 {
+			font-size: 25px;
+			color: var(--color-black);
+			display: inline-block;
+		}
+		thead {
+			background: var(--color-gray-light);
+		}
+		.list-table {
+			height: 100%;
+			border: 1px solid #e5e5e5;
+			padding: 0;
+			border-radius: 6px;
+		}
+		.edit-patient, .delete-patient {
+			display: inline-block;
+			width: 20px;
+		}
+		.table thead th {
+		    padding: 1em 0.45em !important;
+		    font-size: 14px !important;
+		    vertical-align: middle !important;
+		}
+		.table td {
+		    padding: 1em 0.45em !important;
+		    font-size: 13.5px;
+		}
+		#add_patient {
+			float: right;
+		    background-color: var(--color-blue-light);
+		    border: 1px solid var(--color-blue-light);
+		    color: #fff;
+		    font-size: 15px;
+		    border-radius: 6px;
+		    padding: 8px 13px;
+		    position: relative;
+		    top: -3px;
+		    cursor: pointer;
+		}
+		#add_patient:hover {
+			opacity: 0.85;
+		}
+		#add_patient:focus {
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row wrapper-list">
+			<div class="col-lg-12 list-header">
+				<img src="../../assets/images/icons/details-user.svg" alt="" />
+				<h3>Listes des patients</h3>
+				<button id="add_patient">Add patient</button>
+			</div>
+			<div class="col-lg-12 list-table">
+				<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th scope="col" style="min-width: 70px;"></th>
+				      <th scope="col">ID</th>
+				      <th scope="col">NAME</th>
+				      <th scope="col" style="min-width: 130px;">PARENTS NAMES</th>
+				      <th scope="col">GENDER</th>
+				      <th scope="col">AGE</th>
+				      <th scope="col">OCCUPATION</th>
+				      <th scope="col">ADDRESS</th>
+				      <th scope="col">CONTACT No.</th>
+				      <th scope="col">REFERENCE</th>
+				      <th scope="col">DATE</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td scope="col">
+				      	<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+				      	<img src="../../assets/images/icons/delete-table.svg" class="delete-patient" alt="edit patient" />
+				      </td>
+  				      <td scope="col">1</td>
+  				      <td scope="col">AMINE SMItd</td>
+  				      <td scope="col">MALEK & NADIA ARCHIBALD</td>
+  				      <td scope="col">MALE</td>
+  				      <td scope="col">29</td>
+  				      <td scope="col">Dévelopeur web</td>
+  				      <td scope="col">Ibourassen, oued ghir Béjaia</td>
+  				      <td scope="col">+213 0559461326</td>
+  				      <td scope="col">ZS6G5E4Z</td>
+  				      <td scope="col">26-12-2020</td>
+				    </tr>
+				    <tr>
+				      <td scope="col">
+				      	<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+				      	<img src="../../assets/images/icons/delete-table.svg" class="delete-patient" alt="edit patient" />
+				      </td>
+  				      <td scope="col">1</td>
+  				      <td scope="col">AMINE SMItd</td>
+  				      <td scope="col">MALEK & NADIA ARCHIBALD</td>
+  				      <td scope="col">MALE</td>
+  				      <td scope="col">29</td>
+  				      <td scope="col">Dévelopeur web</td>
+  				      <td scope="col">Ibourassen, oued ghir Béjaia</td>
+  				      <td scope="col">+213 0559461326</td>
+  				      <td scope="col">ZS6G5E4Z</td>
+  				      <td scope="col">26-12-2020</td>
+				    </tr>
+				    <tr>
+				      <td scope="col">
+				      	<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+				      	<img src="../../assets/images/icons/delete-table.svg" class="delete-patient" alt="edit patient" />
+				      </td>
+  				      <td scope="col">1</td>
+  				      <td scope="col">AMINE SMItd</td>
+  				      <td scope="col">MALEK & NADIA ARCHIBALD</td>
+  				      <td scope="col">MALE</td>
+  				      <td scope="col">29</td>
+  				      <td scope="col">Dévelopeur web</td>
+  				      <td scope="col">Ibourassen, oued ghir Béjaia</td>
+  				      <td scope="col">+213 0559461326</td>
+  				      <td scope="col">ZS6G5E4Z</td>
+  				      <td scope="col">26-12-2020</td>
+				    </tr>
+				    <tr>
+				      <td scope="col">
+				      	<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+				      	<img src="../../assets/images/icons/delete-table.svg" class="delete-patient" alt="edit patient" />
+				      </td>
+  				      <td scope="col">1</td>
+  				      <td scope="col">AMINE SMItd</td>
+  				      <td scope="col">MALEK & NADIA ARCHIBALD</td>
+  				      <td scope="col">MALE</td>
+  				      <td scope="col">29</td>
+  				      <td scope="col">Dévelopeur web</td>
+  				      <td scope="col">Ibourassen, oued ghir Béjaia</td>
+  				      <td scope="col">+213 0559461326</td>
+  				      <td scope="col">ZS6G5E4Z</td>
+  				      <td scope="col">26-12-2020</td>
+				    </tr>
+				    <tr>
+				      <td scope="col">
+				      	<img src="../../assets/images/icons/pencil.svg" class="edit-patient" alt="edit patient" />
+				      	<img src="../../assets/images/icons/delete-table.svg" class="delete-patient" alt="edit patient" />
+				      </td>
+  				      <td scope="col">1</td>
+  				      <td scope="col">AMINE SMItd</td>
+  				      <td scope="col">MALEK & NADIA ARCHIBALD</td>
+  				      <td scope="col">MALE</td>
+  				      <td scope="col">29</td>
+  				      <td scope="col">Dévelopeur web</td>
+  				      <td scope="col">Ibourassen, oued ghir Béjaia</td>
+  				      <td scope="col">+213 0559461326</td>
+  				      <td scope="col">ZS6G5E4Z</td>
+  				      <td scope="col">26-12-2020</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		const customTitlebar = require('custom-electron-titlebar');
+		const path = require('path'); 
+		const url = require('url');
+
+		new customTitlebar.Titlebar({
+		    backgroundColor: customTitlebar.Color.fromHex('#444'),
+		    icon : url.format(path.join(__dirname, '/../../assets/images/logos/logox2.png'))
+		});
+	</script>
+
+
+
+</body>
+</html>

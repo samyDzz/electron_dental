@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tableau de bord</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/global.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/header.css" />
+	<link rel="stylesheet" type="text/css" href="../../../node_modules/electron-tabs/electron-tabs.css" />
+	<link rel="stylesheet" href="../../assets/stylesheets/calendar/demo.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/calendar/theme3.css"/>
+
+    
+	<script type="text/javascript" src="../../assets/javascripts/jquery-3.5.1.min.js"></script>
+	<style type="text/css">
+		.window-title {
+			color: #fff;
+			font-size: 15px !important;
+		}
+		.titlebar {
+			height: 40px !important;
+		}
+		.titlebar > .window-appicon {
+		    width: 40px !important;
+		    height: 40px !important;
+		    background-size: 25px !important;
+		    top: -2px !important;
+		}
+		.wrapper-tabs {
+		    flex: 0 0 calc(100% - 300px) !important;
+		    max-width: 100% !important;
+		}
+		.wrapper-calendar {
+			flex: 0 0 300px !important;
+		    max-width: 100% !important;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<%- include('templates/header.ejs'); %>
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 wrapper-tabs">
+				<div class="etabs-tabgroup">
+				  <div class="etabs-tabs"></div>
+				  <div class="etabs-buttons"></div>
+				</div>
+				<div class="etabs-views"></div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 wrapper-calendar" style="padding: 20px 15px;">
+				<div class="search-input">
+					<input type="text" name="search" placeholder="chercher un patient" />
+					<img src="../../assets/images/icons/search.svg" />
+				</div>
+				<div id="caleandar"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../../assets/javascripts/menu/customMenuDash.js"></script>
+	<script type="text/javascript" src="../../assets/javascripts/header.js"></script>
+	<script type="text/javascript" src="../../assets/javascripts/tabs.js"></script>
+
+	<script type="text/javascript" src="../../assets/javascripts/calendar/caleandar.js"></script>
+	<script type="text/javascript" src="../../assets/javascripts/calendar/demo.js"></script>
+
+</body>
+</html>

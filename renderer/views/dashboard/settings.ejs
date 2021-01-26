@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		Patient Informations
+	</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/global.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/header.css" />
+	<link rel="stylesheet" type="text/css" href="../../../node_modules/electron-tabs/electron-tabs.css" />
+	<link rel="stylesheet" href="../../assets/stylesheets/calendar/demo.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/calendar/theme3.css"/>
+	<script type="text/javascript" src="../../assets/javascripts/jquery-3.5.1.min.js"></script>
+    <style type="text/css">
+    	body {
+    		padding: 50px !important;
+    		background-color: #fff;
+    	}
+    	.window-title {
+    		color: #fff;
+    		font-size: 15px !important;
+    	}
+    	.titlebar {
+    		height: 45px !important;
+    	}
+    	.container-after-titlebar {
+    		top: 45px !important;
+    		padding-top: 20px !important;
+    	}
+    	._control {
+    	    margin-top: 0;
+    	}
+    	._control label {
+    		position: relative;
+    		text-align: left;
+    		font-size: 14px;
+    	}
+    	._control input {
+    		width: 100%;
+    		height: 40px;
+    		border-radius: 4px;
+    		border: 1px solid var(--color-gris);
+    		padding-left: 10px;
+    		font-size: 13px;
+    	}
+    	.err {
+			position: relative;
+		    color: var(--color-red);
+		    font-size: 13px;
+		    left: 10px;
+		    top: 1px;
+		    visibility: hidden;
+		    margin: 0;
+    	}
+    	._control select {
+    	    width: 100%;
+    	    height: 40px;
+    	    border-radius: 4px;
+    	    border: 1px solid #e5e7eb;
+    	    padding-left: 10px;
+    	    font-size: 13px;
+    	}
+    	._control textarea {
+    	    width: 100%;
+    	    height: 70px;
+    	    border-radius: 4px;
+    	    border: 1px solid var(--color-gris);
+    	    padding-left: 10px;
+    	    font-size: 13px;
+    	    padding-top: 10px;
+    	}
+    	._control input:focus, ._control select:focus, ._control textarea:focus {
+    		outline: none;
+    	}
+    	.half_form {
+			width: 49%;
+		    display: inline-block;
+    	}
+
+    	._control button {
+		    float: right;
+		    background: #fff;
+		    border-radius: 6px;
+		    margin-left: 10px;
+		    font-size: 14px;
+		    padding: 9px 15px;
+		    cursor: pointer;
+		    border: 1px solid var(--color-gris);
+    	}
+    	._control button:hover {
+    		border: 1px solid var(--color-blue-light) !important;
+    		color: var(--color-blue-light) !important;
+    	}
+    	.control_options {
+    		position: relative;
+		    bottom: 0;
+		    height: 50px;
+		    padding-top: 10px;
+		    width: 100%;
+		    left: 0;
+		    right: 0;
+		    padding-right: 15px;
+		}
+		._control button>img {
+		    width: 15px;
+		    display: inline-block;
+		}
+		._control button>span {
+			display: inline-block;
+		}
+		.container-after-titlebar {
+			position: absolute;
+		    overflow: auto;
+		    padding: 50px !important;
+		}
+		.container-fluid {
+		    border: 1px solid var(--color-gris);
+		    border-radius: 6px;
+		    padding: 35px;
+		}
+		.wrapper-avatar {
+			width: 150px;
+			height: 150px;
+			border: 1px solid var(--color-gris);
+			text-align: center;
+			position: relative;
+			left: 0;
+			right: 0;
+			margin: auto;
+			display: flex;
+			padding: 15px;
+			border-radius: 6px;
+			cursor: pointer;
+			background-color: #fff;
+		}
+		.wrapper-avatar img {
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			object-fit: none;
+			object-position: center;
+		}
+		#add-client-form {
+			background: #fff;
+			border: 1px solid var(--color-gris);
+			border-radius: 6px;
+			padding: 30px;
+		}
+		.list-header {
+			margin-bottom: 25px;
+			padding: 0;
+		}
+		.list-header img {
+			width: 45px;
+			position: relative;
+			top: -5px;
+			margin-right: 10px;
+		}
+		.list-header h3 {
+			font-size: 25px;
+			color: var(--color-black);
+			display: inline-block;
+		}
+    </style>
+</head>
+<body>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 list-header">
+				<img src="../../assets/images/icons/settings.svg" alt="" />
+				<h3>Réglages</h3>
+			</div>
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+				<form id="add-client-form">
+				<div class="_control half_form">
+					<label>NOM DU PATIENT</label>
+					<input type="text" name="search" placeholder="Moha Smith" />
+					<p class="err err-patient-name">Veuillez insérer un nom de patient valide</p>
+				</div>
+				<div class="_control half_form">
+					<label>PSEUDO</label>
+					<input type="text" name="search" placeholder="admin" />
+					<p class="err err-pseudo">Veuillez insérer un pseudo valide</p>
+				</div>
+				<div class="_control half_form">
+					<label>EMAIL</label>
+					<input type="email" name="email" placeholder="" />
+					<p class="err err-email">Veuillez insérer un e-mail valide</p>
+				</div>
+				<div class="_control half_form">
+					<label>TÉLÉPHONE</label>
+					<input type="text" name="" />
+					<p class="err err-phone">Veuillez insérer un téléphone valide</p>
+				</div>
+				<div class="_control">
+					<label>MOT DE PASSE</label>
+					<input type="password" name="password" placeholder="************" />
+					<p class="err err-password">Veuillez insérer un mot de passe valide</p>
+				</div>
+				<div class="_control">
+					<label>RE MOT DE PASSE</label>
+					<input type="password" name="re_password" placeholder="************" />
+					<p class="err err-repassword">Veuillez retaper le mot de passe</p>
+				</div>
+				<div class="_control control_options">
+					<button id="close_patient">
+						<img src="../../assets/images/icons/diskette.svg" alt="CLOSE" />
+						<span>FERMER<span>
+					</button>
+					<button id="save_patient">
+						<img src="../../assets/images/icons/diskette.svg" alt="SAVE" />
+						<span>ENREGISTRER<span>
+					</button>
+				</div>
+				</form>	
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<div class="wrapper-avatar">
+					<img src="../../assets/images/profile/avatar.png" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const customTitlebar = require('custom-electron-titlebar');
+		const path = require('path'); 
+		const url = require('url');
+
+		new customTitlebar.Titlebar({
+		    backgroundColor: customTitlebar.Color.fromHex('#4198f7'),
+		    menu: false,
+		    titleHorizontalAlignment: "left",
+		    maximizable: false
+		});
+	</script>
+
+</body>
+</html>
